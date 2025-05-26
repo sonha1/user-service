@@ -13,6 +13,10 @@ spring:
       max-lifetime: 1800000
       connection-timeout: 30000
       leak-detection-threshold: 0
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
 jwt:
   prefix: Bearer
   secret: acMbf@2024
@@ -22,3 +26,7 @@ jwt:
 server:
   servlet:
     context-path: /user-service/api
+
+grpc:
+  server:
+    port: 9090

@@ -13,7 +13,7 @@ import java.util.Set;
 public class UserPrincipal implements UserDetails {
 
     Set<GrantedAuthority> authorities = null;
-    private Integer userId;
+    private Long userId;
     private String username;
     private String password;
 

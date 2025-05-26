@@ -1,7 +1,7 @@
 package com.gtel.user_service.utils;
 
-import com.gtel.homework.common.Const;
-import com.gtel.homework.exception.ApplicationException;
+import com.gtel.user_service.common.Const;
+import com.gtel.user_service.exception.ApplicationException;
 
 public class StringUtils {
 

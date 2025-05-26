@@ -1,6 +1,5 @@
 package com.gtel.user_service.controller;
 
-import com.gtel.user_service.model.request.LoginRequest;
 import com.gtel.user_service.model.request.RegisterRequest;
 import com.gtel.user_service.model.response.ResponseWrapper;
 import com.gtel.user_service.service.UserService;
@@ -18,7 +17,7 @@ public class RegisterController {
 
     @PostMapping()
     public ResponseEntity<ResponseWrapper> register(RegisterRequest request) {
-        return ResponseEntity.ok(new ResponseWrapper(userService.login(request)));
+        return ResponseEntity.ok(new ResponseWrapper(userService.register(request)));
     }
 
 }

@@ -17,7 +17,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -33,7 +32,7 @@ public class UserService {
     @Value("${jwt.prefix:Bearer}")
     private String prefixToken;
 
-    public Boolean registerUser(RegisterRequest request) throws ApplicationException {
+    public Boolean register(RegisterRequest request) throws ApplicationException {
         boolean isUserExisted = userRepository.existsByUsername(request.getUsername());
         if (isUserExisted) {
             throw new ApplicationException(ERROR_CODE.INVALID_REQUEST, Const.MessageCode.USER_ALREADY_EXISTS);
