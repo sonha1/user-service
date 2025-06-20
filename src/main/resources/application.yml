@@ -17,16 +17,33 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+  rabbitmq:
+    addresses: localhost
+    port: 5672
+    username: root
+    password: root
+    queues:
+      notification:
+        email: notification_email_queue
+        sms: notification_sms_queue
+        discord: notification_discord_queue
+    exchanges:
+      notification: notification_exchange
+    routing-key:
+      notification:
+        email: notification.email.routing
+        sms: notification.sms.routing
+        discord: notification.discord.routing
 jwt:
   prefix: Bearer
-  secret: acMbf@2024
-  refreshSecret: reMbf@2024
+  secret: acSTK@2024
+  refreshSecret: reSTK@2024
   validity: 86400
 
 server:
   servlet:
     context-path: /user-service/api
-
+  port: 8000
 grpc:
   server:
-    port: 9090
+    port: 9091
